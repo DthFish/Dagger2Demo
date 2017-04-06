@@ -2,7 +2,7 @@ package com.zlz.dagger2demo.weight;
 
 /**
  * Description ${Desc}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/10/18.
  */
 

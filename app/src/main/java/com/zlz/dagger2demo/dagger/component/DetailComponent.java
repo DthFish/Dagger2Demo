@@ -8,7 +8,7 @@ import dagger.Component;
 
 /**
  * Description ${继承方式1}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/11/23.
  */
 @PerActivity//因为AComponent用了@Singleton所以此处不能继续用@Singleton

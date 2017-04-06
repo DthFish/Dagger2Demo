@@ -10,20 +10,19 @@ import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.RadioButton;
 
 import com.zlz.dagger2demo.R;
 
 
 /**
  * Description ${Desc}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/10/21.
  */
 
-public class DateRadioButton extends RadioButton {
+public class DateRadioButton extends android.support.v7.widget.AppCompatRadioButton {
     private String TAG="TAG";
-    private int TEXTMARGIN = 16;
+    private int TEXT_MARGIN = 16;
     private int RADIUS = 6;
     private Paint mPaint;
     private Context mContext;
@@ -102,7 +101,7 @@ public class DateRadioButton extends RadioButton {
         mRectF = new RectF();
 
         mRightArea = dip2px(mContext,20);
-        TEXTMARGIN= dip2px(mContext,8);
+        TEXT_MARGIN = dip2px(mContext,8);
         RADIUS=dip2px(mContext,3);
     }
 
@@ -135,7 +134,7 @@ public class DateRadioButton extends RadioButton {
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         getTextRect(mTextPaint, getText().toString().trim(),mNumRect);
         getTextRect(mDayPaint, "DAY",mDayRect);
-        int height = mNumRect.bottom - mNumRect.top + mDayRect.bottom - mDayRect.top + TEXTMARGIN + getPaddingTop() + getPaddingBottom();
+        int height = mNumRect.bottom - mNumRect.top + mDayRect.bottom - mDayRect.top + TEXT_MARGIN + getPaddingTop() + getPaddingBottom();
         int width = Math.max((mNumRect.right - mNumRect.left), (mDayRect.right - mDayRect.left)) + getPaddingLeft() + getPaddingRight();
         int size = Math.max(height, width);
 
@@ -155,12 +154,12 @@ public class DateRadioButton extends RadioButton {
         canvas.drawRoundRect(mLeftRectF, RADIUS, RADIUS, mPaint);
         getTextRect(mTextPaint, getText().toString().trim(),mNumRect);
         getTextRect(mDayPaint, "DAY",mDayRect);
-        int hight = -mNumRect.top - mDayRect.top + TEXTMARGIN;
+        int height = -mNumRect.top - mDayRect.top + TEXT_MARGIN;
         int width = mDayRect.right;
         Log.d(TAG, "num: " + mNumRect.left + "," +mNumRect.right);
 
-        canvas.drawText(getText().toString().trim(),(mRectF.right-mRightArea-mNumRect.right)*.5f,(mRectF.bottom-TEXTMARGIN)*.5f,mTextPaint);
-        canvas.drawText("DAY",(mRectF.right-mRightArea-width)*.5f,(mRectF.bottom+hight)*.5f,mDayPaint);
+        canvas.drawText(getText().toString().trim(),(mRectF.right-mRightArea-mNumRect.right)*.5f,(mRectF.bottom- TEXT_MARGIN)*.5f,mTextPaint);
+        canvas.drawText("DAY",(mRectF.right-mRightArea-width)*.5f,(mRectF.bottom+height)*.5f,mDayPaint);
         if(isChecked()){
             canvas.drawCircle(mRectF.right - dip2px(mContext,7),mRectF.bottom *.5f,dip2px(mContext,2.5f),mPaint);
             canvas.drawCircle(mRectF.right - dip2px(mContext,7),mRectF.bottom *.5f,dip2px(mContext,5),mRingPaint);

@@ -41,7 +41,7 @@ import static android.view.View.generateViewId;
  *               2、用@Module提供@Provider注入;
  *               3、局部单例@Singleton;
  *               4、Component继承方式1以及自定义Scope注解;}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/11/23.
  */
 
@@ -268,8 +268,8 @@ public class DetailActivity extends BaseActivity implements IDetailView {
     }
 
     @Override
-    public void setDatas(List<ItemMain> datas) {
-        mAdapter.setDatas(datas);
+    public void setData(List<ItemMain> data) {
+        mAdapter.setData(data);
     }
 
     private static class Dimension {

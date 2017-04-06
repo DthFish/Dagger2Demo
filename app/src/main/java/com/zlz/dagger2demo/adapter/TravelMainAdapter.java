@@ -16,11 +16,11 @@ import java.util.List;
 
 /**
  * Description ${Desc}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/10/19.
  */
 public class TravelMainAdapter extends RecyclerView.Adapter {
-    private List<ItemMain> mDatas=new ArrayList<>();
+    private List<ItemMain> mData = new ArrayList<>();
     private Context mContext;
     private final LayoutInflater mInflater;
 
@@ -29,17 +29,18 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
 
         this.mInflater = LayoutInflater.from(mContext);
     }
-    public TravelMainAdapter(Context context,List<ItemMain> datas){
+
+    public TravelMainAdapter(Context context, List<ItemMain> data) {
         this.mContext = context;
-        mDatas = datas;
+        mData = data;
         this.mInflater = LayoutInflater.from(mContext);
 
     }
 
-    public void setDatas(List<ItemMain> datas){
-        if(datas != null&& datas.size()>0){
-            mDatas.clear();
-            mDatas.addAll(datas);
+    public void setData(List<ItemMain> data) {
+        if (data != null && data.size() > 0) {
+            mData.clear();
+            mData.addAll(data);
             notifyDataSetChanged();
         }
     }
@@ -50,13 +51,13 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
         switch (viewType) {
 
             case 0:
-                return new TitleViewHolder(mInflater.inflate(R.layout.item_travel_title, null));
+                return new TitleViewHolder(mInflater.inflate(R.layout.item_travel_title, parent, false));
             case 1:
-                return new TrafficViewHolder(mInflater.inflate(R.layout.item_travel_plane, null));
+                return new TrafficViewHolder(mInflater.inflate(R.layout.item_travel_plane, parent, false));
             case 2:
-                return new HotelViewHolder(mInflater.inflate(R.layout.item_travel_hotel, null));
+                return new HotelViewHolder(mInflater.inflate(R.layout.item_travel_hotel, parent, false));
             case 3:
-                return new DailyViewHolder(mInflater.inflate(R.layout.item_travel_daily_detail, null));
+                return new DailyViewHolder(mInflater.inflate(R.layout.item_travel_daily_detail, parent, false));
             default:
                 return null;
         }
@@ -85,15 +86,13 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
 
     private void handleTypeTravel(DailyViewHolder holder, int position) {
 
-        int s = Integer.valueOf(mDatas.get(position).day) + 1;
-        holder.mTvDate.setText("第" + s +"天");
-
+        int s = Integer.valueOf(mData.get(position).day) + 1;
+        holder.mTvDate.setText("第" + s + "天");
 
 
     }
 
     private void handleTypeHotel(HotelViewHolder holder, int position) {
-
 
 
     }
@@ -103,7 +102,7 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
     }
 
     private void handleTypeTitle(TitleViewHolder holder, int position) {
-        ItemMain itemMain = mDatas.get(position);
+        ItemMain itemMain = mData.get(position);
         int imgId = R.mipmap.ic_launcher;
         switch (itemMain.iconType) {
             case 0:
@@ -118,28 +117,28 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
         }
         holder.mIvIcon.setImageResource(imgId);
         holder.mTvTitle.setText(itemMain.title);
-        holder.mDivider.setVisibility(position == 0 ? View.GONE:View.VISIBLE);
+        holder.mDivider.setVisibility(position == 0 ? View.GONE : View.VISIBLE);
     }
 
 
     @Override
     public int getItemCount() {
-        return mDatas.size();
+        return mData.size();
     }
 
     @Override
     public int getItemViewType(int position) {
 
-        return mDatas.get(position).type;
+        return mData.get(position).type;
     }
 
-    static class TitleViewHolder extends RecyclerView.ViewHolder {
+    private static class TitleViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView mTvTitle;
-        public ImageView mIvIcon;
-        public View mDivider;
+        TextView mTvTitle;
+        ImageView mIvIcon;
+        View mDivider;
 
-        public TitleViewHolder(View itemView) {
+        TitleViewHolder(View itemView) {
             super(itemView);
             mIvIcon = (ImageView) itemView.findViewById(R.id.iv_icon);
             mTvTitle = (TextView) itemView.findViewById(R.id.tv_title);
@@ -147,32 +146,30 @@ public class TravelMainAdapter extends RecyclerView.Adapter {
         }
     }
 
-    static class TrafficViewHolder extends RecyclerView.ViewHolder {
+    private static class TrafficViewHolder extends RecyclerView.ViewHolder {
 
 
-
-        public TrafficViewHolder(View itemView) {
+        TrafficViewHolder(View itemView) {
             super(itemView);
 
         }
     }
 
-    static class HotelViewHolder extends RecyclerView.ViewHolder {
+    private static class HotelViewHolder extends RecyclerView.ViewHolder {
 
 
-
-        public HotelViewHolder(View itemView) {
+        HotelViewHolder(View itemView) {
             super(itemView);
 
         }
     }
 
-    static class DailyViewHolder extends RecyclerView.ViewHolder {
+    private static class DailyViewHolder extends RecyclerView.ViewHolder {
 
 
-        public TextView mTvDate;
+        TextView mTvDate;
 
-        public DailyViewHolder(View itemView) {
+        DailyViewHolder(View itemView) {
             super(itemView);
             mTvDate = (TextView) itemView.findViewById(R.id.tv_date);
 

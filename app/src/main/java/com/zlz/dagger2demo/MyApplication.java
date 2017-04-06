@@ -5,7 +5,7 @@ import android.support.multidex.MultiDexApplication;
 
 /**
  * Description ${对于App生命周期中的单例}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2017/1/20.
  */
 

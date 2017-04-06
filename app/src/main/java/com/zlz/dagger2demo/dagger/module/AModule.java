@@ -9,7 +9,7 @@ import dagger.Provides;
 
 /**
  * Description ${单例}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2017/1/18.
  */
 @Module

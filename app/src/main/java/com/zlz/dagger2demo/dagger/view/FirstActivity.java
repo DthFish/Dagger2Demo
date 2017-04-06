@@ -10,7 +10,7 @@ import com.zlz.dagger2demo.R;
 
 /**
  * Description ${Desc}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2017/1/19.
  */
 

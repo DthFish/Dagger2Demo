@@ -22,9 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TravelDetailActivity"/>
-        <activity android:name=".TravelDetailActivity2"/>
-
     </application>
 
 </manifest>

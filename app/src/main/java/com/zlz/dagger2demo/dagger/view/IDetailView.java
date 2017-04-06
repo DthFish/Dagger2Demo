@@ -6,11 +6,11 @@ import java.util.List;
 
 /**
  * Description ${Desc}
- * Author Zhaolizhi
+ * Author zlz
  * Date 2016/11/23.
  */
 public interface IDetailView {
     void setDailyTitleIndex(int index);
     void initRadioButton(int count);
-    void setDatas(List<ItemMain> datas);
+    void setData(List<ItemMain> datas);
 }
