@@ -23,7 +23,6 @@ public class MyApplication extends MultiDexApplication {
 
         sInstance = this;
         mAppComponent = DaggerAppComponent.create();
-
     }
 
     public AppComponent getAppComponent(){

@@ -25,7 +25,7 @@ public class DetailModule {
         return mView;
     }*/
     @Provides
-    IDetailPresenter providerIDetailPresenter(){
+    IDetailPresenter provideIDetailPresenter(){
 //        return new DetailPresenter2(mView);
         return new DetailPresenter(mView);
     }

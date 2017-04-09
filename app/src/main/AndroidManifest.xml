@@ -3,15 +3,13 @@
           package="com.zlz.dagger2demo">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".MyApplication"
         android:theme="@style/AppTheme">
-
         <activity android:name=".dagger.view.DetailActivity">
-
         </activity>
         <activity android:name=".dagger.view.SecondActivity"/>
         <activity android:name=".dagger.view.FirstActivity">
@@ -21,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity android:name=".dagger.view.SingleOneActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".dagger.view.SingleTwoActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

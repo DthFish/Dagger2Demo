@@ -17,7 +17,7 @@ public class AModule {
 
     @Singleton
     @Provides
-    A providerA(){
+    A provideA(){
         return new A();
     }
 }

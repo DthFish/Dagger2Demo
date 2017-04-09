@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+import com.zlz.dagger2demo.BaseActivity;
 import com.zlz.dagger2demo.R;
 import com.zlz.dagger2demo.adapter.TravelMainAdapter;
 import com.zlz.dagger2demo.dagger.bean.A;
@@ -27,7 +28,6 @@ import com.zlz.dagger2demo.dagger.module.DetailModule;
 import com.zlz.dagger2demo.dagger.presenter.IDetailPresenter;
 import com.zlz.dagger2demo.weight.DateRadioButton;
 import com.zlz.dagger2demo.weight.ItemMain;
-import com.zlz.dagger2demo.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,6 @@ public class DetailActivity extends BaseActivity implements IDetailView {
         AComponent aComponent = DaggerAComponent.create();
         DaggerDetailComponent.builder().aComponent(aComponent).detailModule(new DetailModule(this)).build().inject(this);
         mPresenter.start();
-
         Log.d(TAG, "mA == mA2 ? : " + (mA == mA2));//true
         Log.d(TAG, "mA == aComponent.providerA() ? : " + (mA == aComponent.providerA()));//true
         Log.d(TAG, "mB == mB2 ? : " + (mB == mB2));//false

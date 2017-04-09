@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <Button
         android:id="@+id/btn_second"
-        android:text="SecondActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="SecondActivity"/>
 
     <Button
         android:id="@+id/btn_detail"
-        android:text="DetailActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="DetailActivity"/>
+
+    <Button
+        android:id="@+id/btn_single_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SingleOneActivity"/>
+
+    <Button
+        android:id="@+id/btn_single_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SingleTwoActivity"/>
 
 </LinearLayout>

@@ -24,20 +24,20 @@ public class DModule {
     }
     @Named("custom")
     @Provides
-    D providerD(){
-        Log.d("tag", "providerD");
+    D provideD(){
+        Log.d("tag", "provideD");
         return new D(mDName);
     }
     @Named("default")
     @Provides
-    D providerDefaultD() {
+    D provideDefaultD() {
 
         return new D();
     }
 
     @Provides
-    String providerName(){
-        Log.d("tag", "providerName");
+    String provideName(){
+        Log.d("tag", "provideName");
         return mDName;
     }
 }
