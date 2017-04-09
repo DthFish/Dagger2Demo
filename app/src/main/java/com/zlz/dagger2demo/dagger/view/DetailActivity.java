@@ -66,11 +66,10 @@ public class DetailActivity extends BaseActivity implements IDetailView {
 
         AComponent aComponent = DaggerAComponent.create();
         DaggerDetailComponent.builder().aComponent(aComponent).detailModule(new DetailModule(this)).build().inject(this);
-//        mPresenter = new DetailPresenter(this);
         mPresenter.start();
 
         Log.d(TAG, "mA == mA2 ? : " + (mA == mA2));//true
-        Log.d(TAG, "mA == aComponent.providerA() ? : " + (mA == aComponent.providerA()));
+        Log.d(TAG, "mA == aComponent.providerA() ? : " + (mA == aComponent.providerA()));//true
         Log.d(TAG, "mB == mB2 ? : " + (mB == mB2));//false
     }
 

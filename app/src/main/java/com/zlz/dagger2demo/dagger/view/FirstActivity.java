@@ -3,10 +3,17 @@ package com.zlz.dagger2demo.dagger.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 
 import com.zlz.dagger2demo.BaseActivity;
 import com.zlz.dagger2demo.R;
+import com.zlz.dagger2demo.dagger.bean.D;
+import com.zlz.dagger2demo.dagger.component.DaggerDComponent;
+import com.zlz.dagger2demo.dagger.module.DModule;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Description ${Desc}
@@ -15,12 +22,21 @@ import com.zlz.dagger2demo.R;
  */
 
 public class FirstActivity extends BaseActivity implements View.OnClickListener {
-
+    @Named("default")
+    @Inject
+    D mD;
+    @Named("custom")
+    @Inject
+    D mD2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         initEvent();
+
+        DaggerDComponent.builder().dModule(new DModule("I am D")).build().inject(this);
+        Log.d("tag", "mD is name ? : " + mD.getName());//
+        Log.d("tag", "mD2 is name ? : " + mD2.getName());//
     }
 
     private void initEvent() {

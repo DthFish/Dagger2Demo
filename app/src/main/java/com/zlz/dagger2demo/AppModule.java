@@ -23,6 +23,6 @@ public class AppModule {
         return new OkHttpClient.Builder().connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                 .readTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                 .build();
-}
+    }
 
 }

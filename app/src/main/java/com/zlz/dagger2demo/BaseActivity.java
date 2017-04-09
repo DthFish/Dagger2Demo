@@ -30,9 +30,13 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         BaseComponent baseComponent = DaggerBaseComponent.create();
         baseComponent.inject(this);
+
+
+
 //        AComponent aComponent = DaggerAComponent.create();
 //        aComponent.inject(this);
         Log.d(TAG, "mC == mBaseComponent.getC() ? : " + (mC == baseComponent.getC()));//false
         Log.d(TAG, "mB1 ? : " + mB1);//
+
     }
 }

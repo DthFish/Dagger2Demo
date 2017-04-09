@@ -15,7 +15,6 @@ import dagger.Provides;
 @Module
 public class AModule {
 
-
     @Singleton
     @Provides
     A providerA(){
