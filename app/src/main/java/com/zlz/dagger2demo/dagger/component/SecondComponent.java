@@ -11,7 +11,7 @@ import dagger.Subcomponent;
  * Date 2017/1/22.
  */
 @PerActivity
-@Subcomponent
+@Subcomponent/*(modules = {DModule.class})*/
 public interface SecondComponent {
 
     void inject(SecondActivity secondActivity);

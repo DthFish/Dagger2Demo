@@ -28,9 +28,7 @@ public class SecondActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        MyApplication myApplication = MyApplication.get();
-
-        myApplication.getAppComponent().plus().inject(this);
+        MyApplication.get().getAppComponent().plus(/*new DModule("dd")*/).inject(this);
         Log.d(TAG, "mOkHttpClient == mOkHttpClient2 ? : " + (mOkHttpClient == mOkHttpClient2));//true
 
     }

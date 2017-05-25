@@ -16,7 +16,7 @@ import okhttp3.OkHttpClient;
 @Component(modules = {AppModule.class})
 public interface AppComponent {
 
-    SecondComponent plus();
+    SecondComponent plus(/*DModule dModule*/);
     OkHttpClient getOKHttpClient();
 
 }

@@ -33,7 +33,6 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         initEvent();
-
         DaggerDComponent.builder().dModule(new DModule("I am D")).build().inject(this);
         Log.d("tag", "mD is name ? : " + mD.getName());//
         Log.d("tag", "mD2 is name ? : " + mD2.getName());//
