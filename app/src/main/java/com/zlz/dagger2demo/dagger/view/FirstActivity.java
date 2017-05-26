@@ -39,7 +39,7 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void initEvent() {
-        findViewById(R.id.btn_second).setOnClickListener(this);
+        findViewById(R.id.btn_okhttp_single).setOnClickListener(this);
         findViewById(R.id.btn_detail).setOnClickListener(this);
         findViewById(R.id.btn_single_one).setOnClickListener(this);
         findViewById(R.id.btn_single_two).setOnClickListener(this);
@@ -49,8 +49,8 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.btn_second:
-                startActivity(new Intent(FirstActivity.this,SecondActivity.class));
+            case R.id.btn_okhttp_single:
+                startActivity(new Intent(FirstActivity.this,OkHttpSingleActivity.class));
                 break;
             case R.id.btn_detail:
                 startActivity(new Intent(FirstActivity.this,DetailActivity.class));

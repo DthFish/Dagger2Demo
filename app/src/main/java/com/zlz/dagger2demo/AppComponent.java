@@ -1,6 +1,6 @@
 package com.zlz.dagger2demo;
 
-import com.zlz.dagger2demo.dagger.component.SecondComponent;
+import com.zlz.dagger2demo.dagger.component.OkHttpSingleComponent;
 
 import javax.inject.Singleton;
 
@@ -15,8 +15,8 @@ import okhttp3.OkHttpClient;
 @Singleton
 @Component(modules = {AppModule.class})
 public interface AppComponent {
-
-    SecondComponent plus(/*DModule dModule*/);
+    void inject(MyApplication application);
+    OkHttpSingleComponent plus();
     OkHttpClient getOKHttpClient();
 
 }

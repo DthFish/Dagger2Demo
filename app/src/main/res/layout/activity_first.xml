@@ -5,10 +5,10 @@
               android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_second"
+        android:id="@+id/btn_okhttp_single"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SecondActivity"/>
+        android:text="OkHttpSingleActivity"/>
 
     <Button
         android:id="@+id/btn_detail"

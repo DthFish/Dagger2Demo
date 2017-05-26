@@ -1,7 +1,6 @@
 package com.zlz.dagger2demo.dagger.component;
 
-import com.zlz.dagger2demo.dagger.PerActivity;
-import com.zlz.dagger2demo.dagger.view.SecondActivity;
+import com.zlz.dagger2demo.dagger.view.OkHttpSingleActivity;
 
 import dagger.Subcomponent;
 
@@ -10,9 +9,8 @@ import dagger.Subcomponent;
  * Author zlz
  * Date 2017/1/22.
  */
-@PerActivity
 @Subcomponent/*(modules = {DModule.class})*/
-public interface SecondComponent {
+public interface OkHttpSingleComponent {
 
-    void inject(SecondActivity secondActivity);
+    void inject(OkHttpSingleActivity secondActivity);
 }

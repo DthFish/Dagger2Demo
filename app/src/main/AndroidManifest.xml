@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".dagger.view.DetailActivity">
         </activity>
-        <activity android:name=".dagger.view.SecondActivity"/>
+        <activity android:name=".dagger.view.OkHttpSingleActivity"/>
         <activity android:name=".dagger.view.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
