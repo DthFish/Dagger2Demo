@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
-//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'//Android gradle plugin 版本是2.2以上可以省略
     }
 }
 
