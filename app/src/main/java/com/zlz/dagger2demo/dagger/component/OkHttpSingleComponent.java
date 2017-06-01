@@ -13,4 +13,9 @@ import dagger.Subcomponent;
 public interface OkHttpSingleComponent {
 
     void inject(OkHttpSingleActivity secondActivity);
+
+    /*@Subcomponent.Builder
+    interface Builder{
+        OkHttpSingleComponent build();
+    }*/
 }

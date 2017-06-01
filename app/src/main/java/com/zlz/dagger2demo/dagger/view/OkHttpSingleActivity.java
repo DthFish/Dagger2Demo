@@ -30,6 +30,7 @@ public class OkHttpSingleActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp_single);
         MyApplication.get().getAppComponent().plus().inject(this);//方法1
+//        MyApplication.get().getAppComponent().sComponent().build().inject(this);
 //        DaggerOkHttpSingle2Component.builder().appComponent(MyApplication.get().getAppComponent()).build().inject(this);//方法2
         TextView tvTime = (TextView) findViewById(R.id.tv_time);
         tvTime.setText("time:" + System.currentTimeMillis());

@@ -2,7 +2,13 @@ package com.zlz.dagger2demo;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.zlz.dagger2demo.dagger.Test;
+import com.zlz.dagger2demo.dagger.bean.E;
+
 import javax.inject.Inject;
+
+import dagger.releasablereferences.ForReleasableReferences;
+import dagger.releasablereferences.ReleasableReferenceManager;
 
 
 /**
@@ -14,10 +20,14 @@ import javax.inject.Inject;
 public class MyApplication extends MultiDexApplication {
     @Inject
     AppComponent mAppComponent;
-
+    @Inject
+    @ForReleasableReferences(Test.class)
+    ReleasableReferenceManager mReleasableReferenceManager;
+    @Inject
+    E mE;
     private static MyApplication sInstance;
 
-    public static MyApplication get(){
+    public static MyApplication get() {
         return sInstance;
     }
 
@@ -28,7 +38,13 @@ public class MyApplication extends MultiDexApplication {
         DaggerAppComponent.create().inject(this);
     }
 
-    public AppComponent getAppComponent(){
+    public AppComponent getAppComponent() {
         return mAppComponent;
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mReleasableReferenceManager.releaseStrongReferences();
     }
 }

@@ -1,5 +1,8 @@
 package com.zlz.dagger2demo;
 
+import com.zlz.dagger2demo.dagger.Test;
+import com.zlz.dagger2demo.dagger.bean.E;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +21,7 @@ import okhttp3.Response;
  * Author zlz
  * Date 2017/1/22.
  */
-@Module
+@Module/*(subcomponents = {OkHttpSingleComponent.class})*/
 public class AppModule {
 
     @Provides
@@ -30,7 +33,6 @@ public class AppModule {
                 .readTimeout(30 * 1000, TimeUnit.MILLISECONDS)
                 .build();
     }
-
     @Provides
     Interceptor provideCommonParamsInterceptor() {
 
@@ -46,6 +48,12 @@ public class AppModule {
                 return chain.proceed(newRequest);
             }
         };
+    }
+
+    @Test
+    @Provides
+    E provideE(){
+        return new E();
     }
 
 }
