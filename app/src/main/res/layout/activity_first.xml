@@ -28,4 +28,10 @@
         android:layout_height="wrap_content"
         android:text="SingleTwoActivity"/>
 
+    <Button
+        android:id="@+id/btn_binds_instance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BindsInstance"/>
+
 </LinearLayout>

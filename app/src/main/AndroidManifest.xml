@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".dagger.view.SingleOneActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".dagger.view.SingleTwoActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".dagger.view.BindsInstanceActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

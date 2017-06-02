@@ -43,6 +43,7 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener 
         findViewById(R.id.btn_detail).setOnClickListener(this);
         findViewById(R.id.btn_single_one).setOnClickListener(this);
         findViewById(R.id.btn_single_two).setOnClickListener(this);
+        findViewById(R.id.btn_binds_instance).setOnClickListener(this);
     }
 
     @Override
@@ -60,8 +61,10 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.btn_single_two:
                 startActivity(new Intent(FirstActivity.this,SingleTwoActivity.class));
-
-
+                break;
+            case R.id.btn_binds_instance:
+                startActivity(new Intent(FirstActivity.this,BindsInstanceActivity.class));
+                break;
         }
     }
 }
