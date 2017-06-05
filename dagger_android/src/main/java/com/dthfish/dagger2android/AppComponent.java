@@ -7,7 +7,7 @@ import dagger.Component;
  * Author Zhaolizhi
  * Date 2017/6/2.
  */
-@Component(modules = {MainModule.class})
+@Component(modules = {AppModule.class})
 public interface AppComponent {
     void inject(MyApplication application);
 }

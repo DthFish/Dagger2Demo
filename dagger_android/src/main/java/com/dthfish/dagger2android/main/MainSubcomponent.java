@@ -1,4 +1,4 @@
-package com.dthfish.dagger2android;
+package com.dthfish.dagger2android.main;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
@@ -8,7 +8,7 @@ import dagger.android.AndroidInjector;
  * Author Zhaolizhi
  * Date 2017/6/2.
  */
-@Subcomponent
+@Subcomponent(modules = {MainModule.class})
 public interface MainSubcomponent extends AndroidInjector<MainActivity> {
     @Subcomponent.Builder
     abstract class Builder extends AndroidInjector.Builder<MainActivity>{
